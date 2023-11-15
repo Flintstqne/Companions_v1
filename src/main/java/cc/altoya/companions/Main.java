@@ -1,13 +1,10 @@
 package cc.altoya.companions;
 
 import java.io.File;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.List;
 
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-public class App extends JavaPlugin implements Listener {
+public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         initializeConfig();
@@ -15,10 +12,10 @@ public class App extends JavaPlugin implements Listener {
 
         //How to register commands
         // this.getCommand("chunk").setExecutor(new Claims());
-        this.getCommand("summonHorse").setExecutor(new summonHorseCommand());
+        this.getCommand("summonHorse").setExecutor(new SummonHorseCommand());
 
         //How to register eventListeners
-        getServer().getPluginManager().registerEvents((Listener) this,this);
+        getServer().getPluginManager().registerEvents(new NoHorseDropsListener(), this);
     }
 
 
