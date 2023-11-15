@@ -1,0 +1,11 @@
+main: cc.altoya.companions.App
+name: companions
+version: 0
+folia-supported: true
+api-version: 1.20
+description: A plugin to summon a faithful steed at your side.
+
+commands:
+  summonHorse:
+    description: Summons your loyal companion
+    usage: /summonHorse
